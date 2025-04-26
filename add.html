@@ -2,16 +2,40 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ajouter un Projet - HBA-PLATEFORME</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Ajouter un nouveau projet</h1>
-    <form method="POST">
-        <input type="text" name="title" placeholder="Titre du projet" required><br>
-        <textarea name="description" placeholder="Description du projet" required></textarea><br>
-        <button type="submit">Ajouter</button>
-    </form>
-    <a href="/">Retour à l'accueil</a>
+
+    <header class="header">
+        <h1>Ajouter un <span>Projet</span></h1>
+        <a href="/" class="btn-add">🏠 Retour à l'accueil</a>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <form method="POST" action="/add">
+                <div class="form-group">
+                    <label for="title">Titre du projet :</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description :</label>
+                    <textarea id="description" name="description" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Ajouter</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 HBA-PLATEFORME. Tous droits réservés.</p>
+    </footer>
+
 </body>
 </html>
+
