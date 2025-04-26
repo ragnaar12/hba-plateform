@@ -5,29 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HBA-PLATEFORME</title>
     <link rel="stylesheet" href="/static/style.css">
-    <!-- Poppins Font -->
+    <!-- Importation de la police Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <h1>Bienvenue sur HBA-PLATEFORME</h1>
+    <header class="header">
+        <h1>Bienvenue sur <span>HBA-PLATEFORME</span></h1>
+        <a href="/add" class="btn-add">➕ Ajouter un projet</a>
+    </header>
 
-    <div style="text-align: center;">
-        <a href="/add">➕ Ajouter un projet</a>
-    </div>
+    <main>
+        <section class="projects">
+            {% if projects %}
+                {% for project in projects %}
+                <div class="card">
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-project">Aucun projet pour le moment.</p>
+            {% endif %}
+        </section>
+    </main>
 
-    <section class="projects">
-        {% if projects %}
-            {% for project in projects %}
-            <div class="card">
-                <h2>{{ project.title }}</h2>
-                <p>{{ project.description }}</p>
-            </div>
-            {% endfor %}
-        {% else %}
-            <p style="text-align: center; margin-top: 30px; font-size: 1.2em; color: #777;">Aucun projet pour le moment.</p>
-        {% endif %}
-    </section>
+    <footer class="footer">
+        <p>&copy; 2025 HBA-PLATEFORME. Tous droits réservés.</p>
+    </footer>
 
 </body>
 </html>
