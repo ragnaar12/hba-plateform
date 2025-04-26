@@ -1,20 +1,22 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-# Exemple de projets
-projects = [
-    {"title": "Plateforme IA", "description": "Projet d'intelligence artificielle avancée."},
-    {"title": "Application Mobile", "description": "Développement d'une application pour étudiants."},
-]
+# Exemple de liste des projets
+projects = []
 
 @app.route('/')
 def home():
     return render_template('index.html', projects=projects)
 
-@app.route('/add')
+@app.route('/add', methods=['GET', 'POST'])
 def add_project():
-    return "<h2>Page pour ajouter un projet (à faire)</h2>"
+    if request.method == 'POST':
+        title = request.form['title']
+        description = request.form['description']
+        projects.append({'title': title, 'description': description})
+        return redirect('/')
+    return render_template('add.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
