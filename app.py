@@ -1,38 +1,21 @@
-from flask import Flask, render_template, request, redirect
-import json
-import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Charger les projets depuis un fichier JSON
-def load_projects():
-    if os.path.exists('projets.json'):
-        with open('projets.json', 'r') as f:
-            return json.load(f)
-    return []
-
-# Sauvegarder les projets
-def save_project(project):
-    projects = load_projects()
-    projects.append(project)
-    with open('projets.json', 'w') as f:
-        json.dump(projects, f, indent=4)
+# Exemple de projets
+projects = [
+    {"title": "Plateforme IA", "description": "Projet d'intelligence artificielle avancée."},
+    {"title": "Application Mobile", "description": "Développement d'une application pour étudiants."},
+]
 
 @app.route('/')
-def index():
-    projects = load_projects()
+def home():
     return render_template('index.html', projects=projects)
 
-@app.route('/add', methods=['GET', 'POST'])
-def add():
-    if request.method == 'POST':
-        project = {
-            'title': request.form['title'],
-            'description': request.form['description']
-        }
-        save_project(project)
-        return redirect('/')
-    return render_template('add.html')
+@app.route('/add')
+def add_project():
+    return "<h2>Page pour ajouter un projet (à faire)</h2>"
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
+
