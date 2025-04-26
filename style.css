@@ -1,105 +1,53 @@
 /* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Form Container */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
-/* Body */
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #e3f2fd, #ffffff);
-    color: #333;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 40px 20px 20px;
-}
-
-.header h1 {
-    font-size: 2.8em;
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
     color: #0d47a1;
 }
 
-.header h1 span {
-    color: #1565c0;
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
 }
 
-.btn-add {
-    margin-top: 20px;
-    padding: 10px 20px;
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
     background: #0d47a1;
     color: white;
+    border: none;
     border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.3s ease;
-    display: inline-block;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.btn-add:hover {
+.btn-submit:hover {
     background: #1565c0;
 }
 
-/* Main */
-main {
-    flex: 1;
-}
 
-/* Projects Section */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-}
-
-.card {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.card h2 {
-    font-size: 1.5em;
-    color: #0d47a1;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 1em;
-    color: #555;
-    line-height: 1.5em;
-}
-
-/* No Projects */
-.no-project {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1.2em;
-    color: #777;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #0d47a1;
-    color: white;
-    font-size: 0.9em;
-}
 
 
 
